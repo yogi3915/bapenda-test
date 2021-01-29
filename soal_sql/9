@@ -1,0 +1,9 @@
+SELECT d.kode_dosen,
+       d.nama_dosen,
+FROM Dosen d
+INNER JOIN Prestasi p
+    ON d.kode_dosen = p.kode_dosen
+INNER JOIN Matakuliah mk
+    ON mk.kode_mk = p.kode_mk
+WHERE 
+    COUNT(mk.nama_mk) > 1;

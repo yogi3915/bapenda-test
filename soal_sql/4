@@ -1,0 +1,11 @@
+SELECT mh.npm,
+       mh.nama, 
+       mk.nama_mk
+FROM Mahasiswa mh
+INNER JOIN Prestasi p
+    ON mh.npm = p.npm
+INNER JOIN Matakuliah mk
+    ON p.kode_mk = mk.kode_mk
+WHERE 
+    p.nil_fin < 60;
+    

@@ -1,0 +1,14 @@
+SELECT mh.npm,
+       mh.nama, 
+       mk.nama_mk,
+       d.nama_dosen
+FROM Mahasiswa mh
+INNER JOIN Prestasi p
+    ON mh.npm = p.npm
+INNER JOIN Matakuliah mk
+    ON p.kode_mk = mk.kode_mk
+INNER JOIN Desen d
+    ON p.kode_dosen = d.kode_dosen
+WHERE 
+    mk.nama_mk = 'Perancangan Sistem';
+    

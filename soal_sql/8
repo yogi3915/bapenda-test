@@ -1,0 +1,2 @@
+SELECT COUNT(kode_mk)
+    FROM 'Prestasi';

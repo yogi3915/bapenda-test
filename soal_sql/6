@@ -1,0 +1,14 @@
+SELECT mh.npm,
+       mh.nama, 
+       mk.nama_mk,
+       SUM(p.nil_fin) AS nilai_total
+FROM Mahasiswa mh
+INNER JOIN Prestasi p
+    ON mh.npm = p.npm
+INNER JOIN Matakuliah mk
+    ON p.kode_mk = mk.kode_mk
+WHERE 
+    nilai_total > 100
+ORDER BY 
+    mk.nama_mk ASC;
+    

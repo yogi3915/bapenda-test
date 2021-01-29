@@ -1,0 +1,3 @@
+SELECT * FROM Mahasiswa
+WHERE kota = 'Jakarta' AND
+      kode_pos IS NOT NULL;

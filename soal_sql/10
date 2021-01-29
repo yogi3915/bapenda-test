@@ -1,0 +1,14 @@
+SELECT  mh.nama,
+        p.nil_mid,
+FROM Mahasiswa mh
+INNER JOIN Prestasi p
+    ON mk.npm = p.npm
+WHERE 
+    p.nil_mid > (
+        SELECT 
+            nil_mid
+        FROM 
+            Prestasi
+        WHERE 
+            nil_mid > 75
+    );

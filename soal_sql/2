@@ -1,0 +1,3 @@
+SELECT * FROM Matakuliah
+WHERE sks = 3
+ORDER BY nama_mk ASC;
