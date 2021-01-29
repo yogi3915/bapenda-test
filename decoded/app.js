@@ -23,31 +23,26 @@ function decode(word) {
       ]
 
     let temp = '' 
-
     for (let i = 0; i < alphabeth.length; i++) {
         for (let j = 0; j < arrayAlphabeth.length; j++) {
-            if (alphabeth[i] == arrayAlphabeth[j] && i == 0) {
-                temp += key1[j]
-                break
-            } else if (alphabeth[i] == arrayAlphabeth[j] && i == 1) {
-                temp += key2[j]
-                break
-            } else if (alphabeth[i] == arrayAlphabeth[j] && i == 2) {
-                temp += key1[j]
-                break
-            } else if (i % 3 == 0) {
-                temp += key1[j]
-                break
-            } else {
-                temp += key2[j]
+            if (key1[j] == alphabeth[i] && i == 0) {
+                temp += arrayAlphabeth[j]
+            } else if (key2[j] == alphabeth[i] && i == 1) {
+                temp += arrayAlphabeth[j]
+            } else if (key1[j] == alphabeth[i] && i == 2) {
+                temp += arrayAlphabeth[j]
+            } else if (i % 3 == 0 && key1[j] == alphabeth[i]) {
+                temp += arrayAlphabeth[j]
+            } else if (i % 3 !== 0 && key2[j] == alphabeth[i]) {
+                temp += arrayAlphabeth[j]
             }
         }
     }
 
     return temp
 }
-                                     //"THEORIGINAL"
-console.log(decode("UTFPFUHUBBX")); // "UTFPFUHUBBX" 
+                                     //"THE ORI GIN AL"
+console.log(decode("UTFPFUHUBBX")); // "UTF PFU HUB BX" 
 //                                      121 122 122 122 122
                                     //  012 345 678 910
 // (i == 0) ==> key1
